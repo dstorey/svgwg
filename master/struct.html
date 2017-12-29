@@ -2875,8 +2875,8 @@ IDL attribute.</p>
   void <a href="struct.html#__svg__SVGSVGElement__forceRedraw">forceRedraw</a>();
 };
 
-<a>SVGSVGElement</a> implements <a>SVGFitToViewBox</a>;
-<a>SVGSVGElement</a> implements <a>SVGZoomAndPan</a>;
+<a>SVGSVGElement</a> includes <a>SVGFitToViewBox</a>;
+<a>SVGSVGElement</a> includes <a>SVGZoomAndPan</a>;
 <a>SVGSVGElement</a> implements <a>WindowEventHandlers</a>;</pre>
 
 <p>The
@@ -3261,7 +3261,7 @@ null if there is no such element.</p>
 <pre class="idl">interface <b>SVGSymbolElement</b> : <a>SVGGraphicsElement</a> {
 };
 
-<a>SVGSymbolElement</a> implements <a>SVGFitToViewBox</a>;</pre>
+<a>SVGSymbolElement</a> includes <a>SVGFitToViewBox</a>;</pre>
   
 <p class="note">
   New in SVG 2.
@@ -3287,7 +3287,7 @@ null if there is no such element.</p>
   [SameObject] readonly attribute <a>SVGElement</a>? <a href="struct.html#__svg__SVGUseElement__animatedInstanceRoot">animatedInstanceRoot</a>;
 };
 
-<a>SVGUseElement</a> implements <a>SVGURIReference</a>;</pre>
+<a>SVGUseElement</a> includes <a>SVGURIReference</a>;</pre>
 
 <p>The
 <b id="__svg__SVGUseElement__x">x</b>,
@@ -3349,8 +3349,7 @@ interface <b>SVGUseElementShadowRoot</b> : <a>ShadowRoot</a> {
   on HTML-namespaced element objects in the shadow tree.
 </p>
 
-<pre class="idl">[NoInterfaceObject]
-interface <b>SVGElementInstance</b> {
+<pre class="idl">interface mixin <b>SVGElementInstance</b> {
   [SameObject] readonly attribute <a>SVGElement</a>? <a href="#__svg__SVGElementInstance__correspondingElement">correspondingElement</a>;
   [SameObject] readonly attribute <a>SVGUseElement</a>? <a href="#__svg__SVGElementInstance__correspondingUseElement">correspondingUseElement</a>;
 };</pre>
